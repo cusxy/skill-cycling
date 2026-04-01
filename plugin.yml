@@ -1,0 +1,14 @@
+name: skill-cycling
+version: 1.0.0
+description: >
+  Spec-driven development cycling system — agents, skills, and protocols
+  for orchestrated specify → test → implement workflows.
+author:
+  name: cusxies
+  email: cusxies@users.noreply.github.com
+license: MIT
+keywords:
+  - cycling
+  - spec-driven
+  - tdd
+  - agents
