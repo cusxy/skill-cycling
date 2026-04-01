@@ -18,7 +18,7 @@ description: Создаёт и исправляет спецификации м�
 
 Перед началом работы прочитай:
 
-- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
+- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
 - [spec-format.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/spec-format.md) — формат операций и правила написания спецификаций.
 
 ## Входные параметры

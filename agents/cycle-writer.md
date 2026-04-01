@@ -15,11 +15,11 @@ SKILL.md и определения всех агентов цикла, след�
 
 Тебе ТРЕБУЕТСЯ прочитать перед началом работы:
 
-- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
-- [agent-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-design-protocol.md) — структура определений агентов.
-- [orchestrator-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/orchestrator-design-protocol.md) — структура SKILL.md,
+- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
+- [agent-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-design-protocol.md) — структура определений агентов.
+- [orchestrator-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/orchestrator-design-protocol.md) — структура SKILL.md,
   связь skill с агентами.
-- [cycle-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/cycle-design-protocol.md) — RFC 2119, тон и стиль,
+- [cycle-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/cycle-design-protocol.md) — RFC 2119, тон и стиль,
   правила написания определений.
 
 ## Входные параметры
@@ -32,8 +32,8 @@ SKILL.md и определения всех агентов цикла, след�
 
 ## Артефакты генерации
 
-- SKILL.md в `${agloom:AGLOOM_SKILLS_DIR}/<cycle-name>/`.
-- Определения агентов в `${agloom:AGLOOM_AGENTS_DIR}/<agent-name>.md`.
+- SKILL.md в `${agloom:SKILLS_DIR}/<cycle-name>/`.
+- Определения агентов в `${agloom:AGENTS_DIR}/<agent-name>.md`.
 
 ## Definition of Ready
 
@@ -92,8 +92,8 @@ SKILL.md и определения всех агентов цикла, след�
 - `dor-6`: (режим «Обновление») Существующие файлы из scope прочитаны
   целиком.
 
-  **Pass-пример:** scope содержит `${agloom:AGLOOM_SKILLS_DIR}/spec-cycle/SKILL.md`
-  и `${agloom:AGLOOM_AGENTS_DIR}/spec-writer.md` — оба файла прочитаны полностью,
+  **Pass-пример:** scope содержит `${agloom:SKILLS_DIR}/spec-cycle/SKILL.md`
+  и `${agloom:AGENTS_DIR}/spec-writer.md` — оба файла прочитаны полностью,
   включая все секции и front matter.
 
   **Fail-пример:** scope содержит 3 файла, прочитан только SKILL.md —
@@ -117,7 +117,7 @@ SKILL.md и определения всех агентов цикла, след�
 - `dod-3`: DoR/DoD всех агентов содержат формальные ID.
 - `dod-4`: Критерии проверки reviewers содержат формальные ID для findings.
 - `dod-5`: Межагентная согласованность: returnTo, scope/artifacts.
-- `dod-6`: Стиль соответствует [cycle-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/cycle-design-protocol.md).
+- `dod-6`: Стиль соответствует [cycle-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/cycle-design-protocol.md).
 - `dod-7`: Форматирование Markdown: `pnpm run fmt:md` выполнен без ошибок.
 - `dod-8`: Валидация документов: `doc:frontmatter` и `doc:references` пройдены без ошибок.
 - `dod-9`: (режим «Обновление») Изменения ограничены запрошенной дельтой; рабочие части сохранены.
@@ -139,12 +139,12 @@ SKILL.md и определения всех агентов цикла, след�
 ### SKILL.md
 
 Тебе ТРЕБУЕТСЯ создать SKILL.md по шаблону из
-[orchestrator-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/orchestrator-design-protocol.md).
+[orchestrator-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/orchestrator-design-protocol.md).
 
 ### Определения агентов
 
 Тебе ТРЕБУЕТСЯ создать определение каждого агента по структуре из раздела
-[Структура определения агента](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-design-protocol.md#структура-определения-агента).
+[Структура определения агента](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-design-protocol.md#структура-определения-агента).
 
 ### Согласованность
 
@@ -156,7 +156,7 @@ SKILL.md и определения всех агентов цикла, след�
 
 ### Стиль
 
-Тебе ТРЕБУЕТСЯ следовать правилам из [cycle-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/cycle-design-protocol.md).
+Тебе ТРЕБУЕТСЯ следовать правилам из [cycle-design-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/cycle-design-protocol.md).
 
 ### Правила для режима «Обновление»
 

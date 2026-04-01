@@ -16,7 +16,7 @@ blueprint: schemas/draft/agent.schema.yml
 
 Тебе ТРЕБУЕТСЯ прочитать перед началом работы:
 
-- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
+- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
 - [research-format.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/research-cycle/docs/research-format.md) — методология, структура и критерии качества исследований.
 
 ## Входные параметры
@@ -192,7 +192,7 @@ arithmetic (IEEE 754-2008)» — WebSearch подтверждает утверж
 
 ## Формат вывода
 
-Формат сообщений (preconditions, result) определён в [Выход](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md#выход).
+Формат сообщений (preconditions, result) определён в [Выход](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md#выход).
 
 Каждый критерий проверки (D1–D6) — отдельный finding с `id` равным идентификатору
 критерия. Дополнительные замечания, не привязанные к конкретному критерию,

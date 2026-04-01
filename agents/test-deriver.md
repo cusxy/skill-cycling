@@ -17,7 +17,7 @@ description: Создаёт failing tests из спецификаций (фаз�
 
 Перед началом работы прочитай:
 
-- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
+- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
 - [spec-format.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/spec-format.md) — формат операций в спецификациях.
 
 ## Входные параметры
@@ -228,7 +228,7 @@ describe('<ServiceName>', () => {
    - Новые тесты, соответствующие новым или изменённым пунктам спецификации, **падают**.
      Если тест проходит — проверить: (а) не тестирует ли он уже реализованное поведение,
      (б) не является ли тест тривиальным. Пояснить в сводке.
-4. Отправь result-сообщение в формате [Выход](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md#выход).
+4. Отправь result-сообщение в формате [Выход](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md#выход).
 
 ## Нештатные ситуации
 

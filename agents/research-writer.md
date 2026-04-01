@@ -18,19 +18,19 @@ blueprint: schemas/draft/agent.schema.yml
 
 Тебе ТРЕБУЕТСЯ прочитать перед началом работы:
 
-- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
+- [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md) — протокол работы агента (ввод/вывод, findings, DoR/DoD).
 - [research-format.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/research-cycle/docs/research-format.md) — методология, структура и критерии качества исследований.
 
 ## Входные параметры
 
-- **Scope**: файл исследования (`docs/researches/*.md` или `${agloom:AGLOOM_DOCS_DIR}/*.md`) — существующий или целевой путь.
+- **Scope**: файл исследования (`docs/researches/*.md` или `${agloom:DOCS_DIR}/*.md`) — существующий или целевой путь.
 - **Context**:
   - От оркестратора (создание): описание темы, границы.
   - От research-reviewer (исправление): отчёт с findings.
 
 ## Артефакты генерации
 
-- Файл исследования (`docs/researches/*.md` или `${agloom:AGLOOM_DOCS_DIR}/*.md`): создание или обновление.
+- Файл исследования (`docs/researches/*.md` или `${agloom:DOCS_DIR}/*.md`): создание или обновление.
 
 ## Definition of Ready
 

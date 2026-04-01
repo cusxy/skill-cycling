@@ -29,7 +29,7 @@ relates:
 
 | Документ       | Файл                                                      | Описание                                                   |
 | -------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
-| agent-protocol | [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:AGLOOM_DOCS_DIR}/cycling/agent-protocol.md) | Протокол ввода/вывода, findings, DoR/DoD, структура агента |
+| agent-protocol | [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md) | Протокол ввода/вывода, findings, DoR/DoD, структура агента |
 | spec-format    | [spec-format.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/spec-format.md)                     | Формат операций и правила написания спецификаций           |
 | service types  | [service.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/types/service.md)                       | Шаблоны операций backend-сервиса                           |
 | library types  | [library.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/types/library.md)                       | Шаблоны операций библиотеки                                |
