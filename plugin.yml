@@ -1,5 +1,5 @@
 name: skill-cycling
-version: 1.0.0
+version: 0.1.0
 description: >
   Spec-driven development cycling system — agents, skills, and protocols
   for orchestrated specify → test → implement workflows.
