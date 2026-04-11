@@ -4,9 +4,9 @@ description: >
   Spec-driven development cycling system — agents, skills, and protocols
   for orchestrated specify → test → implement workflows.
 author:
-  name: cusxies
-  email: cusxies@users.noreply.github.com
-license: MIT
+  name: Nikita Gorbunov
+  email: cusxies@gmail.com
+license: Apache-2.0
 keywords:
   - cycling
   - spec-driven
