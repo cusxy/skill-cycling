@@ -1,0 +1,55 @@
+# Agloom (local instructions)
+AGLOOM.override.md
+
+# AGENTS.md generated
+AGENTS.md
+AGENTS.override.md
+!.agloom/**/AGENTS
+
+# Claude Code generated
+.claude/
+.mcp.json
+CLAUDE.md
+!.agloom/**/.claude
+!.agloom/**/.mcp.json
+!.agloom/**/CLAUDE.md
+
+# Codex generated
+.agents/
+.codex/
+!.agloom/**/.agents
+!.agloom/**/.codex
+
+# Gemini generated
+.gemini/
+GEMINI.md
+!.agloom/**/.gemini
+!.agloom/**/GEMINI.md
+
+# OpenCode generated
+.opencode/
+opencode.json
+opencode.jsonc
+!.agloom/**/.opencode
+!.agloom/**/opencode.json
+!.agloom/**/opencode.jsonc
+
+# KiloCode generated
+.kilo/
+kilo.json
+kilo.jsonc
+!.agloom/**/.kilo
+!.agloom/**/kilo.json
+!.agloom/**/kilo.jsonc
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# macOS
+.DS_Store
+
+# Editor backups
+*~
+*.bak
