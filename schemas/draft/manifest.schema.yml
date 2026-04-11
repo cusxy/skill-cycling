@@ -1,7 +1,7 @@
 $schema: ../meta-schema.json
 
 name: manifest
-version: '0.0.0'
+version: "0.0.0"
 description: >
   Реестр компонентов системы. Содержит перечень компонентов, их расположение и связи.
   Стабильный документ: отражает структуру системы, а не её текущее состояние.
@@ -42,7 +42,7 @@ references:
   frontmatter:
     relates:
       target_must_exist: true
-      allowed_extensions: ['.md']
+      allowed_extensions: [".md"]
   internal_links:
     must_resolve: true
     check_anchors: true
@@ -57,9 +57,9 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'spec-writer — создаёт и исправляет спецификации модулей'
+          - text: "spec-writer — создаёт и исправляет спецификации модулей"
         fail:
-          - text: 'spec-writer — последний аудит: 2026-03-10, compliance: 85%'
+          - text: "spec-writer — последний аудит: 2026-03-10, compliance: 85%"
     - id: M3
       rule: Текст написан в третьем лице — нет обращений на «ты» и императивов
       severity: error

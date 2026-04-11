@@ -373,7 +373,7 @@ schemas/
 Поле `version` внутри каждого `.schema.yml`:
 
 ```yaml
-version: '1.0.0' # SemVer: MAJOR.MINOR.PATCH
+version: "1.0.0" # SemVer: MAJOR.MINOR.PATCH
 ```
 
 Major в `version` должен совпадать с номером директории. Это инвариант,
@@ -792,7 +792,7 @@ guidance → generation (открытые наблюдения, ниже agreeme
 $schema: ../meta-schema.json
 
 name: spec
-version: '1.0.0'
+version: "1.0.0"
 description: >
   Спецификация модуля с жизненным циклом.
   Управляет имплементацией: код должен соответствовать спецификации.
@@ -832,7 +832,7 @@ structure:
     max_depth: 4
   sections:
     required:
-      - name: 'Обзор'
+      - name: "Обзор"
         level: 2
 
 prose:
@@ -844,7 +844,7 @@ references:
   frontmatter:
     relates:
       target_must_exist: true
-      allowed_extensions: ['.md']
+      allowed_extensions: [".md"]
     maps_to:
       target_must_exist: false
   internal_links:
@@ -866,9 +866,9 @@ review:
       severity: error
       examples:
         pass:
-          - 'Система создаёт запись в таблице sessions.'
+          - "Система создаёт запись в таблице sessions."
         fail:
-          - 'Создайте запись в таблице sessions.'
+          - "Создайте запись в таблице sessions."
     - id: S7
       rule: Ключевые слова RFC 2119 используются по назначению
       severity: error
@@ -877,9 +877,9 @@ review:
       severity: warning
       examples:
         pass:
-          - 'Система создаёт запись в таблице.'
+          - "Система создаёт запись в таблице."
         fail:
-          - 'Система создаёт запись в таблице и отправляет уведомление.'
+          - "Система создаёт запись в таблице и отправляет уведомление."
   guidance: >
     Оценить полноту покрытия: все ли аспекты модуля описаны.
     Проверить что каждая операция однозначно определяет поведение системы.
@@ -892,7 +892,7 @@ review:
 $schema: ../meta-schema.json
 
 name: index
-version: '1.0.0'
+version: "1.0.0"
 description: >
   Общее описание концепции папки и пререквизиты для остальных файлов.
   Обязателен к прочтению при работе с любым файлом из папки.
@@ -927,7 +927,7 @@ references:
   frontmatter:
     relates:
       target_must_exist: true
-      allowed_extensions: ['.md']
+      allowed_extensions: [".md"]
   internal_links:
     must_resolve: true
 ```
@@ -938,7 +938,7 @@ references:
 $schema: ../meta-schema.json
 
 name: doc
-version: '1.0.0'
+version: "1.0.0"
 description: >
   Информационный документ: архитектура, гайды, конвенции.
   Не управляет имплементацией, предоставляет контекст и объяснения.
@@ -972,7 +972,7 @@ references:
   frontmatter:
     relates:
       target_must_exist: true
-      allowed_extensions: ['.md']
+      allowed_extensions: [".md"]
   internal_links:
     must_resolve: true
 ```
@@ -983,7 +983,7 @@ references:
 $schema: ../meta-schema.json
 
 name: research
-version: '1.0.0'
+version: "1.0.0"
 description: >
   Исследование и анализ: обоснование решений, обзор альтернатив, источники.
   Содержит обязательные секции «Контекст» и «Сводка».
@@ -1009,9 +1009,9 @@ structure:
     max_depth: 4
   sections:
     required:
-      - name: 'Контекст'
+      - name: "Контекст"
         level: 2
-      - name: 'Сводка'
+      - name: "Сводка"
         level: 2
 
 prose:
@@ -1023,7 +1023,7 @@ references:
   frontmatter:
     relates:
       target_must_exist: true
-      allowed_extensions: ['.md']
+      allowed_extensions: [".md"]
   internal_links:
     must_resolve: true
 
@@ -1211,7 +1211,7 @@ format (Prettier)
 ## Заключение
 
 | Решение                       | Выбор                                                                                    |
-| ----------------------------- |------------------------------------------------------------------------------------------|
+| ----------------------------- | ---------------------------------------------------------------------------------------- |
 | `$schema` для JSON/YAML       | Стандартное использование: meta-schema.json и \*.schema.yml                              |
 | Механизм для markdown         | `blueprint` — внутренняя конвенция, URI к определению типа                               |
 | Обоснование имени `blueprint` | Точная метафора (валидация, не scaffold); не перегружено; не присваивает чужую семантику |

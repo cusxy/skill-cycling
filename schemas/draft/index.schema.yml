@@ -1,7 +1,7 @@
 $schema: ../meta-schema.json
 
 name: index
-version: '0.0.0'
+version: "0.0.0"
 description: >
   Общее описание концепции папки и пререквизиты для остальных файлов.
   Обязателен к прочтению при работе с любым файлом из папки.
@@ -42,7 +42,7 @@ references:
   frontmatter:
     relates:
       target_must_exist: true
-      allowed_extensions: ['.md']
+      allowed_extensions: [".md"]
   internal_links:
     must_resolve: true
     check_anchors: true

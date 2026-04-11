@@ -127,8 +127,18 @@ context:
 {
   "type": "preconditions",
   "preconditions": [
-    { "id": "dor-1", "comment": "...", "verdict": "pass", "returnTo": null },
-    { "id": "dor-2", "comment": "...", "verdict": "fail", "returnTo": "spec-writer" }
+    {
+      "id": "dor-1",
+      "comment": "...",
+      "verdict": "pass",
+      "returnTo": null
+    },
+    {
+      "id": "dor-2",
+      "comment": "...",
+      "verdict": "fail",
+      "returnTo": "spec-writer"
+    }
   ],
   "verdict": "pass | fail"
 }

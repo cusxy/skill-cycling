@@ -1,7 +1,7 @@
 $schema: ../meta-schema.json
 
 name: agent
-version: '0.0.0'
+version: "0.0.0"
 description: >
   Определение агента для циклических скиллов-оркестраторов. Агент участвует в паре
   «исполнитель → reviewer» с quality gate между фазами. Содержит контракт (header)
@@ -31,38 +31,38 @@ structure:
     max_depth: 4
     no_level_skip: true
   sections:
-    - heading: 'Общие документы'
+    - heading: "Общие документы"
       level: 2
       description: Список общих документов, обязательных к прочтению перед началом работы
-    - heading: 'Входные параметры'
+    - heading: "Входные параметры"
       level: 2
       description: Типы scope и context по переходам, в которых агент запускается
     - heading:
-        pattern: '^Definition of Ready|^DoR$'
+        pattern: "^Definition of Ready|^DoR$"
       level: 2
       description: Чеклист предусловий для начала работы агента
       lists:
         - type: task_list
           min: 1
     - heading:
-        pattern: '^Definition of Done|^DoD$'
+        pattern: "^Definition of Done|^DoD$"
       level: 2
       description: Чеклист постусловий для завершения работы агента
       lists:
         - type: task_list
           min: 1
-    - heading: 'Артефакты'
+    - heading: "Артефакты"
       level: 2
       optional: true
       severity: warning
       description: Перечень артефактов, создаваемых агентом (для исполнителей)
-    - heading: 'Нештатные ситуации'
+    - heading: "Нештатные ситуации"
       level: 2
       optional: true
       severity: warning
       description: Обработка нештатных ситуаций (для исполнителей)
   content:
-    tail_pattern: '^`returnTo`'
+    tail_pattern: "^`returnTo`"
 
 prose:
   style: instructional
@@ -82,9 +82,9 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'ЗАПРЕЩАЕТСЯ редактировать спецификации, потому что это нарушает трассируемость.'
+          - text: "ЗАПРЕЩАЕТСЯ редактировать спецификации, потому что это нарушает трассируемость."
         fail:
-          - text: 'ЗАПРЕЩАЕТСЯ редактировать спецификации.'
+          - text: "ЗАПРЕЩАЕТСЯ редактировать спецификации."
     - id: A6
       rule: Пункты DoR/DoD бинарны — допускают только ответ да/нет
       description: >
@@ -94,17 +94,17 @@ review:
       severity: error
       examples:
         pass:
-          - text: '- [ ] Все файлы из scope существуют'
+          - text: "- [ ] Все файлы из scope существуют"
         fail:
-          - text: '- [ ] Качество кода приемлемое'
+          - text: "- [ ] Качество кода приемлемое"
     - id: A7
       rule: Пункты DoR/DoD атомарны — одно условие на пункт
       severity: error
       examples:
         pass:
-          - text: '- [ ] Тесты проходят'
+          - text: "- [ ] Тесты проходят"
         fail:
-          - text: '- [ ] Тесты проходят и покрытие > 80%'
+          - text: "- [ ] Тесты проходят и покрытие > 80%"
     - id: A8
       rule: Инструкции написаны во втором лице
       description: >
@@ -114,16 +114,16 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'Тебе ТРЕБУЕТСЯ прочитать все файлы из scope.'
-          - text: 'ЗАПРЕЩАЕТСЯ редактировать спецификации, потому что...'
-            explanation: 'Безличная конструкция с RFC 2119 — допустимо'
+          - text: "Тебе ТРЕБУЕТСЯ прочитать все файлы из scope."
+          - text: "ЗАПРЕЩАЕТСЯ редактировать спецификации, потому что..."
+            explanation: "Безличная конструкция с RFC 2119 — допустимо"
         fail:
-          - text: 'Агент должен прочитать все файлы из scope.'
-            explanation: 'Третье лицо'
-            fix: 'Тебе ТРЕБУЕТСЯ прочитать все файлы из scope.'
-          - text: 'Зафиксировать в findings и завершить с verdict: fail.'
-            explanation: 'Инфинитив без адресата'
-            fix: 'Зафиксируй в findings и заверши с verdict: fail.'
+          - text: "Агент должен прочитать все файлы из scope."
+            explanation: "Третье лицо"
+            fix: "Тебе ТРЕБУЕТСЯ прочитать все файлы из scope."
+          - text: "Зафиксировать в findings и завершить с verdict: fail."
+            explanation: "Инфинитив без адресата"
+            fix: "Зафиксируй в findings и заверши с verdict: fail."
   guidance: >
     Проверить что инструкции однозначны и не допускают вольных интерпретаций.
     Убедиться что DoR/DoD покрывают все аспекты качества артефактов агента.

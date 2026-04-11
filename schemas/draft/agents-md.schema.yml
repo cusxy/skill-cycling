@@ -1,7 +1,7 @@
 $schema: ../meta-schema.json
 
 name: agents-md
-version: '0.0.0'
+version: "0.0.0"
 description: >
   Файл инструкций уровня проекта для AI coding-агентов (AGLOOM.md CLAUDE.md, AGENTS.md).
   Содержит команды, стек, конвенции и границы — только информацию, недоступную
@@ -43,13 +43,13 @@ structure:
       severity: warning
       description: Фреймворк, подход, ключевые команды запуска тестов
     - heading:
-        pattern: '^(Разработка|Workflow|Git|CI)'
+        pattern: "^(Разработка|Workflow|Git|CI)"
       level: 2
       optional: true
       severity: info
       description: Рабочий процесс разработки, ветвление, CI/CD конвенции
     - heading:
-        pattern: '^Документация'
+        pattern: "^Документация"
       level: 2
       optional: true
       severity: info
@@ -97,33 +97,33 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'Денежные суммы: DECIMAL в PostgreSQL, строки в DTO, decimal.js для арифметики.'
-            explanation: 'Конвенция проекта, отличающаяся от defaults'
-          - text: 'Один пакет: `pnpm --filter @agloom/server run build|lint|test`.'
-            explanation: 'Имя скрипта и pipe-синтаксис — агент не знает без явного указания'
-          - text: 'Пайплайн валидации: format → build → lint → test. ТРЕБУЕТСЯ выполнять в указанном порядке.'
-            explanation: 'Порядок шагов валидации — поведенческая инструкция агенту'
-          - text: 'Подмножества format: `fmt:md` / `fmt:md:check`, `fmt:js` / `fmt:js:check`.'
-            explanation: 'Нестандартные имена скриптов — агент не знает без явного указания'
-          - text: 'Managed-зависимости (PostgreSQL, TypeORM): реальная БД (testcontainers).'
-            explanation: 'Методологическая инструкция по тестированию — архитектурное решение'
-          - text: 'Unmanaged-зависимости (CurrencyBeacon, CoinAPI): моки/стабы.'
-            explanation: 'Стратегия мокирования — методологическая инструкция'
-          - text: 'Пользовательская сортировка: поле `position` с разреженной нумерацией (шаг 1000).'
-            explanation: 'Специфика проекта (шаг 1000) — нельзя вывести из кода'
-          - text: 'Подробности: `.agloom/skills/spec-cycle/SKILL.md`.'
-            explanation: 'Ссылка на файл легитимизирована критерием I5'
-          - text: 'Каждая папка в `docs/` содержит `index.md` — пререквизит для остальных файлов папки.'
-            explanation: 'Поведенческая инструкция агенту'
-          - text: 'YAML front matter обязателен. Типы: `index`, `spec`, `doc`, `research`.'
-            explanation: 'Конвенция схемы документации'
-          - text: 'Exchange Rates: CurrencyBeacon (основной), CoinAPI (запасной).'
-            explanation: 'Архитектурное решение о приоритете провайдеров'
-          - text: 'Backend: TypeScript, Node.js, NestJS, TypeORM, PostgreSQL 17.'
-            explanation: 'Технологический стек секции «Стек» — допустим как ориентир'
+          - text: "Денежные суммы: DECIMAL в PostgreSQL, строки в DTO, decimal.js для арифметики."
+            explanation: "Конвенция проекта, отличающаяся от defaults"
+          - text: "Один пакет: `pnpm --filter @agloom/server run build|lint|test`."
+            explanation: "Имя скрипта и pipe-синтаксис — агент не знает без явного указания"
+          - text: "Пайплайн валидации: format → build → lint → test. ТРЕБУЕТСЯ выполнять в указанном порядке."
+            explanation: "Порядок шагов валидации — поведенческая инструкция агенту"
+          - text: "Подмножества format: `fmt:md` / `fmt:md:check`, `fmt:js` / `fmt:js:check`."
+            explanation: "Нестандартные имена скриптов — агент не знает без явного указания"
+          - text: "Managed-зависимости (PostgreSQL, TypeORM): реальная БД (testcontainers)."
+            explanation: "Методологическая инструкция по тестированию — архитектурное решение"
+          - text: "Unmanaged-зависимости (CurrencyBeacon, CoinAPI): моки/стабы."
+            explanation: "Стратегия мокирования — методологическая инструкция"
+          - text: "Пользовательская сортировка: поле `position` с разреженной нумерацией (шаг 1000)."
+            explanation: "Специфика проекта (шаг 1000) — нельзя вывести из кода"
+          - text: "Подробности: `.agloom/skills/spec-cycle/SKILL.md`."
+            explanation: "Ссылка на файл легитимизирована критерием I5"
+          - text: "Каждая папка в `docs/` содержит `index.md` — пререквизит для остальных файлов папки."
+            explanation: "Поведенческая инструкция агенту"
+          - text: "YAML front matter обязателен. Типы: `index`, `spec`, `doc`, `research`."
+            explanation: "Конвенция схемы документации"
+          - text: "Exchange Rates: CurrencyBeacon (основной), CoinAPI (запасной)."
+            explanation: "Архитектурное решение о приоритете провайдеров"
+          - text: "Backend: TypeScript, Node.js, NestJS, TypeORM, PostgreSQL 17."
+            explanation: "Технологический стек секции «Стек» — допустим как ориентир"
         fail:
-          - text: 'apps/server/src/auth/ — модуль авторизации с entities, dto, guards.'
-            explanation: 'Перечисление поддиректорий модуля — агент обнаружит сам'
+          - text: "apps/server/src/auth/ — модуль авторизации с entities, dto, guards."
+            explanation: "Перечисление поддиректорий модуля — агент обнаружит сам"
     - id: I2
       rule: Файл не превышает 200 строк основного содержимого
       description: >
@@ -139,10 +139,10 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'ЗАПРЕЩАЕТСЯ удалять файлы миграций — необратимое разрушение production-схемы.'
+          - text: "ЗАПРЕЩАЕТСЯ удалять файлы миграций — необратимое разрушение production-схемы."
         fail:
-          - text: 'ЗАПРЕЩАЕТСЯ удалять файлы миграций.'
-            fix: 'ЗАПРЕЩАЕТСЯ удалять файлы миграций — необратимое разрушение production-схемы.'
+          - text: "ЗАПРЕЩАЕТСЯ удалять файлы миграций."
+            fix: "ЗАПРЕЩАЕТСЯ удалять файлы миграций — необратимое разрушение production-схемы."
     - id: I4
       rule: Формулировки конкретны и верифицируемы
       description: >
@@ -152,10 +152,10 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'Detroit TDD: реальные объекты, минимум моков. testcontainers для PostgreSQL.'
+          - text: "Detroit TDD: реальные объекты, минимум моков. testcontainers для PostgreSQL."
         fail:
-          - text: 'Следуйте хорошим практикам тестирования.'
-            fix: 'Detroit TDD: реальные объекты, минимум моков. testcontainers для PostgreSQL.'
+          - text: "Следуйте хорошим практикам тестирования."
+            fix: "Detroit TDD: реальные объекты, минимум моков. testcontainers для PostgreSQL."
     - id: I5
       rule: Специализированные инструкции вынесены — корневой файл содержит ссылки
       description: >

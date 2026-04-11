@@ -1,7 +1,7 @@
 $schema: ../meta-schema.json
 
 name: skill
-version: '0.1.0'
+version: "0.1.0"
 description: >
   Определение скилла — оркестратора, управляющего запуском агентов или выполнением
   процедуры в основном контексте Claude Code. Рекомендуемые секции описывают
@@ -27,19 +27,19 @@ structure:
     max_depth: 4
     no_level_skip: true
   sections:
-    - heading: 'Принцип работы'
+    - heading: "Принцип работы"
       level: 2
       optional: true
       severity: warning
       description: Механизм работы скилла — как управляет агентами, формат ввода/вывода агентов
     - heading:
-        pattern: '^(Цикл|Порядок действий|Проверки)'
+        pattern: "^(Цикл|Порядок действий|Проверки)"
       level: 2
       optional: true
       severity: warning
       description: Последовательность шагов, граф переходов между агентами, логика возвратов
     - heading:
-        pattern: '^Definition of Ready'
+        pattern: "^Definition of Ready"
       level: 2
       optional: true
       severity: warning
@@ -48,7 +48,7 @@ structure:
         - type: task_list
           min: 1
     - heading:
-        pattern: '^Definition of Done'
+        pattern: "^Definition of Done"
       level: 2
       optional: true
       severity: warning
@@ -56,13 +56,13 @@ structure:
       lists:
         - type: task_list
           min: 1
-    - heading: 'Обработка ошибок'
+    - heading: "Обработка ошибок"
       level: 2
       optional: true
       severity: info
       description: Поведение при повторных fail вердиктах, зацикливании, нештатных ситуациях
     - heading:
-        pattern: '^(Сводка|Формат отчёта)'
+        pattern: "^(Сводка|Формат отчёта)"
       level: 2
       optional: true
       severity: info
@@ -92,15 +92,15 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'Ты запускаешь агента review-optimizer для оптимизации критериев.'
-            explanation: 'Декларативное второе лицо — валидно'
-          - text: 'Тебе ТРЕБУЕТСЯ сохранять agent_id каждого запущенного агента.'
-            explanation: 'Императивное второе лицо с RFC 2119 — валидно'
-          - text: 'Переход к завершению ТРЕБУЕТСЯ выполнять только при verdict: pass.'
-            explanation: 'Безличная конструкция с RFC 2119 — допустимо'
+          - text: "Ты запускаешь агента review-optimizer для оптимизации критериев."
+            explanation: "Декларативное второе лицо — валидно"
+          - text: "Тебе ТРЕБУЕТСЯ сохранять agent_id каждого запущенного агента."
+            explanation: "Императивное второе лицо с RFC 2119 — валидно"
+          - text: "Переход к завершению ТРЕБУЕТСЯ выполнять только при verdict: pass."
+            explanation: "Безличная конструкция с RFC 2119 — допустимо"
         fail:
-          - text: 'Оркестратор запускает агента review-optimizer.'
-            explanation: 'Третье лицо — скилл должен обращаться к исполнителю напрямую'
+          - text: "Оркестратор запускает агента review-optimizer."
+            explanation: "Третье лицо — скилл должен обращаться к исполнителю напрямую"
     - id: K2
       rule: Описан формат ввода — что пользователь передаёт при вызове скилла
       severity: warning
@@ -116,13 +116,13 @@ review:
       severity: error
       examples:
         pass:
-          - text: 'Ты работаешь inline в основном контексте.'
-            explanation: 'inline — общепринятый технический термин'
-          - text: 'При verdict: fail — вернуть на доработку.'
-            explanation: 'verdict, fail — терминология протокола агентов'
+          - text: "Ты работаешь inline в основном контексте."
+            explanation: "inline — общепринятый технический термин"
+          - text: "При verdict: fail — вернуть на доработку."
+            explanation: "verdict, fail — терминология протокола агентов"
         fail:
-          - text: 'Если что-то сломалось — юзай дебаг.'
-            explanation: 'Разговорная лексика'
+          - text: "Если что-то сломалось — юзай дебаг."
+            explanation: "Разговорная лексика"
     - id: K5
       rule: Для циклирующего скилла — описан граф переходов между агентами
       description: >

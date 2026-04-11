@@ -58,7 +58,7 @@ _dia_ (через) + _taxis_ (расположение). Определяет ч
 `research`, `index`) фактически реализует аналогичный подход:
 
 | Agloom `type` | Ближайший аналог Diataxis | Различие                                           |
-|---------------| ------------------------- | -------------------------------------------------- |
+| ------------- | ------------------------- | -------------------------------------------------- |
 | `spec`        | Reference (частично)      | Spec управляет имплементацией, не просто описывает |
 | `doc`         | Explanation               | Прямое соответствие                                |
 | `research`    | Explanation               | Глубже, с источниками и анализом                   |
@@ -519,12 +519,12 @@ Open-source решение на Azure с агентным подходом:
 
 ### 5.4. Аналогии
 
-| Домен             | Мета-уровень                     | Уровень типов            | Уровень данных      |
-| ----------------- | -------------------------------- | ------------------------ | ------------------- |
-| JSON Schema       | draft-2020-12 meta-schema        | Пользовательская schema  | JSON-документ       |
-| TypeScript        | TypeScript compiler              | `.d.ts` type definitions | `.ts` код           |
-| SQL               | INFORMATION_SCHEMA               | DDL (CREATE TABLE)       | DML (INSERT/SELECT) |
-| DITA              | DITA architectural specification | DTD/XSD topic type       | XML topic           |
+| Домен              | Мета-уровень                     | Уровень типов            | Уровень данных      |
+| ------------------ | -------------------------------- | ------------------------ | ------------------- |
+| JSON Schema        | draft-2020-12 meta-schema        | Пользовательская schema  | JSON-документ       |
+| TypeScript         | TypeScript compiler              | `.d.ts` type definitions | `.ts` код           |
+| SQL                | INFORMATION_SCHEMA               | DDL (CREATE TABLE)       | DML (INSERT/SELECT) |
+| DITA               | DITA architectural specification | DTD/XSD topic type       | XML topic           |
 | **Agloom schemas** | `meta-schema.json`               | `*.schema.yml`           | `*.md` frontmatter  |
 
 ### 5.5. Pipeline с мета-валидацией

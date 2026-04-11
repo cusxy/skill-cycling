@@ -16,8 +16,8 @@ relates:
 
 ## Агенты
 
-| Агент            | Файл                                                    | Фаза      | Роль        | Описание                                                    |
-| ---------------- | ------------------------------------------------------- | --------- | ----------- | ----------------------------------------------------------- |
+| Агент            | Файл                                                                                  | Фаза      | Роль        | Описание                                                    |
+| ---------------- | ------------------------------------------------------------------------------------- | --------- | ----------- | ----------------------------------------------------------- |
 | spec-writer      | [spec-writer.md](${agloom:PROJECT_DIR}/${agloom:AGENTS_DIR}/spec-writer.md)           | Specify   | Исполнитель | Создаёт и исправляет спецификации модулей                   |
 | spec-reviewer    | [spec-reviewer.md](${agloom:PROJECT_DIR}/${agloom:AGENTS_DIR}/spec-reviewer.md)       | Specify   | Reviewer    | Проверяет непротиворечивость, полноту и формат спецификаций |
 | test-deriver     | [test-deriver.md](${agloom:PROJECT_DIR}/${agloom:AGENTS_DIR}/test-deriver.md)         | Test      | Исполнитель | Выводит failing tests из спецификаций (red TDD)             |
@@ -27,12 +27,12 @@ relates:
 
 ## Общие документы
 
-| Документ       | Файл                                                      | Описание                                                   |
-| -------------- | --------------------------------------------------------- | ---------------------------------------------------------- |
-| agent-protocol | [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md) | Протокол ввода/вывода, findings, DoR/DoD, структура агента |
-| spec-format    | [spec-format.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/spec-format.md)                     | Формат операций и правила написания спецификаций           |
-| service types  | [service.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/types/service.md)                       | Шаблоны операций backend-сервиса                           |
-| library types  | [library.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/types/library.md)                       | Шаблоны операций библиотеки                                |
+| Документ       | Файл                                                                                        | Описание                                                   |
+| -------------- | ------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| agent-protocol | [agent-protocol.md](${agloom:PROJECT_DIR}/${agloom:DOCS_DIR}/cycling/agent-protocol.md)     | Протокол ввода/вывода, findings, DoR/DoD, структура агента |
+| spec-format    | [spec-format.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/spec-format.md) | Формат операций и правила написания спецификаций           |
+| service types  | [service.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/types/service.md)   | Шаблоны операций backend-сервиса                           |
+| library types  | [library.md](${agloom:PROJECT_DIR}/${agloom:SKILLS_DIR}/spec-cycle/docs/types/library.md)   | Шаблоны операций библиотеки                                |
 
 ## Граф переходов
 

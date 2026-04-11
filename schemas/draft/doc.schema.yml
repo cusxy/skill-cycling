@@ -1,7 +1,7 @@
 $schema: ../meta-schema.json
 
 name: doc
-version: '0.0.0'
+version: "0.0.0"
 description: >
   Информационный документ без жизненного цикла.
   Описывает архитектуру, конвенции, планы, процессы.
@@ -42,7 +42,7 @@ references:
   frontmatter:
     relates:
       target_must_exist: true
-      allowed_extensions: ['.md']
+      allowed_extensions: [".md"]
   internal_links:
     must_resolve: true
     check_anchors: true

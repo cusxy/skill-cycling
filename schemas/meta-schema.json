@@ -3,11 +3,15 @@
   "$id": "urn:agloom:schemas:meta-schema:v1",
   "title": "Agloom Document Type Definition",
   "description": "Meta-schema defining the vocabulary for markdown document type definitions",
-
   "type": "object",
-  "required": ["$schema", "name", "version", "description", "frontmatter"],
+  "required": [
+    "$schema",
+    "name",
+    "version",
+    "description",
+    "frontmatter"
+  ],
   "additionalProperties": false,
-
   "properties": {
     "$schema": {
       "type": "string",
@@ -27,26 +31,40 @@
       "minLength": 1,
       "description": "Purpose and intended usage of this document type"
     },
-    "frontmatter": { "$ref": "#/$defs/frontmatterRules" },
-    "structure": { "$ref": "#/$defs/structureRules" },
-    "prose": { "$ref": "#/$defs/proseRules" },
-    "references": { "$ref": "#/$defs/referenceRules" },
-    "review": { "$ref": "#/$defs/reviewRules" }
+    "frontmatter": {
+      "$ref": "#/$defs/frontmatterRules"
+    },
+    "structure": {
+      "$ref": "#/$defs/structureRules"
+    },
+    "prose": {
+      "$ref": "#/$defs/proseRules"
+    },
+    "references": {
+      "$ref": "#/$defs/referenceRules"
+    },
+    "review": {
+      "$ref": "#/$defs/reviewRules"
+    }
   },
-
   "$defs": {
     "semver": {
       "type": "string",
       "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
     },
-
     "frontmatterRules": {
       "type": "object",
-      "required": ["required"],
+      "required": [
+        "required"
+      ],
       "additionalProperties": false,
       "properties": {
-        "required": { "$ref": "#/$defs/fieldMap" },
-        "optional": { "$ref": "#/$defs/fieldMap" },
+        "required": {
+          "$ref": "#/$defs/fieldMap"
+        },
+        "optional": {
+          "$ref": "#/$defs/fieldMap"
+        },
         "additionalProperties": {
           "type": "boolean",
           "default": false,
@@ -54,27 +72,48 @@
         }
       }
     },
-
     "fieldMap": {
       "type": "object",
-      "additionalProperties": { "$ref": "#/$defs/fieldConstraint" }
-    },
-
-    "fieldConstraint": {
-      "type": "object",
-      "required": ["type"],
-      "additionalProperties": false,
-      "properties": {
-        "type": { "enum": ["string", "number", "boolean", "array"] },
-        "enum": { "type": "array", "minItems": 1 },
-        "const": {},
-        "minLength": { "type": "integer", "minimum": 0 },
-        "pattern": { "type": "string", "format": "regex" },
-        "items": { "$ref": "#/$defs/fieldConstraint" },
-        "description": { "type": "string" }
+      "additionalProperties": {
+        "$ref": "#/$defs/fieldConstraint"
       }
     },
-
+    "fieldConstraint": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "string",
+            "number",
+            "boolean",
+            "array"
+          ]
+        },
+        "enum": {
+          "type": "array",
+          "minItems": 1
+        },
+        "const": {},
+        "minLength": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pattern": {
+          "type": "string",
+          "format": "regex"
+        },
+        "items": {
+          "$ref": "#/$defs/fieldConstraint"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    },
     "structureRules": {
       "type": "object",
       "additionalProperties": false,
@@ -118,7 +157,9 @@
         },
         "sections": {
           "type": "array",
-          "items": { "$ref": "#/$defs/sectionDef" },
+          "items": {
+            "$ref": "#/$defs/sectionDef"
+          },
           "description": "Ordered list of expected top-level sections. Array order defines expected document order."
         },
         "content": {
@@ -127,10 +168,12 @@
         }
       }
     },
-
     "sectionDef": {
       "type": "object",
-      "required": ["heading", "level"],
+      "required": [
+        "heading",
+        "level"
+      ],
       "additionalProperties": false,
       "properties": {
         "heading": {
@@ -152,7 +195,10 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "min": { "type": "integer", "minimum": 0 },
+            "min": {
+              "type": "integer",
+              "minimum": 0
+            },
             "max": {
               "type": "integer",
               "minimum": 0,
@@ -166,7 +212,11 @@
           "description": "Section purpose — guidance for template generation and review"
         },
         "severity": {
-          "enum": ["error", "warning", "info"],
+          "enum": [
+            "error",
+            "warning",
+            "info"
+          ],
           "default": "error",
           "description": "Violation severity when section is missing or invalid"
         },
@@ -177,32 +227,44 @@
         },
         "children": {
           "type": "array",
-          "items": { "$ref": "#/$defs/sectionDef" },
+          "items": {
+            "$ref": "#/$defs/sectionDef"
+          },
           "description": "Expected subsections (same structure, recursive)"
         },
         "required_text": {
           "type": "array",
-          "items": { "$ref": "#/$defs/textMatch" },
+          "items": {
+            "$ref": "#/$defs/textMatch"
+          },
           "description": "Text that must appear within this section"
         },
         "forbidden_text": {
           "type": "array",
-          "items": { "$ref": "#/$defs/textMatch" },
+          "items": {
+            "$ref": "#/$defs/textMatch"
+          },
           "description": "Text that must not appear within this section"
         },
         "code_blocks": {
           "type": "array",
-          "items": { "$ref": "#/$defs/codeBlockRule" },
+          "items": {
+            "$ref": "#/$defs/codeBlockRule"
+          },
           "description": "Code block constraints within this section"
         },
         "tables": {
           "type": "array",
-          "items": { "$ref": "#/$defs/tableRule" },
+          "items": {
+            "$ref": "#/$defs/tableRule"
+          },
           "description": "Table constraints within this section"
         },
         "lists": {
           "type": "array",
-          "items": { "$ref": "#/$defs/listRule" },
+          "items": {
+            "$ref": "#/$defs/listRule"
+          },
           "description": "List constraints within this section"
         },
         "word_count": {
@@ -211,7 +273,6 @@
         }
       }
     },
-
     "headingMatch": {
       "oneOf": [
         {
@@ -221,7 +282,9 @@
         },
         {
           "type": "object",
-          "required": ["pattern"],
+          "required": [
+            "pattern"
+          ],
           "additionalProperties": false,
           "properties": {
             "pattern": {
@@ -233,7 +296,6 @@
         }
       ]
     },
-
     "textMatch": {
       "oneOf": [
         {
@@ -242,7 +304,9 @@
         },
         {
           "type": "object",
-          "required": ["pattern"],
+          "required": [
+            "pattern"
+          ],
           "additionalProperties": false,
           "properties": {
             "pattern": {
@@ -254,19 +318,22 @@
         }
       ]
     },
-
     "contentRules": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "required_text": {
           "type": "array",
-          "items": { "$ref": "#/$defs/textMatch" },
+          "items": {
+            "$ref": "#/$defs/textMatch"
+          },
           "description": "Text that must appear somewhere in the document body"
         },
         "forbidden_text": {
           "type": "array",
-          "items": { "$ref": "#/$defs/textMatch" },
+          "items": {
+            "$ref": "#/$defs/textMatch"
+          },
           "description": "Text that must not appear anywhere in the document body"
         },
         "tail_pattern": {
@@ -276,7 +343,6 @@
         }
       }
     },
-
     "codeBlockRule": {
       "type": "object",
       "additionalProperties": false,
@@ -285,7 +351,10 @@
           "type": "string",
           "description": "Required language identifier (e.g. yaml, typescript)"
         },
-        "min": { "type": "integer", "minimum": 0 },
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
         "max": {
           "type": "integer",
           "minimum": 0,
@@ -293,12 +362,14 @@
         }
       }
     },
-
     "tableRule": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "min": { "type": "integer", "minimum": 0 },
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
         "max": {
           "type": "integer",
           "minimum": 0,
@@ -311,21 +382,29 @@
         },
         "required_headers": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "Column headers that must be present"
         }
       }
     },
-
     "listRule": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "type": {
-          "enum": ["ordered", "unordered", "task_list"],
+          "enum": [
+            "ordered",
+            "unordered",
+            "task_list"
+          ],
           "description": "List variant. task_list = items with checkboxes (- [ ] / - [x])"
         },
-        "min": { "type": "integer", "minimum": 0 },
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
         "max": {
           "type": "integer",
           "minimum": 0,
@@ -338,12 +417,14 @@
         }
       }
     },
-
     "wordCountRule": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "min": { "type": "integer", "minimum": 0 },
+        "min": {
+          "type": "integer",
+          "minimum": 0
+        },
         "max": {
           "type": "integer",
           "minimum": 0,
@@ -351,25 +432,38 @@
         }
       }
     },
-
     "proseRules": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "style": {
-          "enum": ["academic", "instructional"],
+          "enum": [
+            "academic",
+            "instructional"
+          ],
           "description": "Writing style. academic: formal scientific/popular-science prose (third person, no slang). instructional: imperative SOP-style instructions (second person)"
         },
         "language": {
-          "enum": ["ru", "en"],
+          "enum": [
+            "ru",
+            "en"
+          ],
           "description": "Primary language of the document"
         },
         "person": {
-          "enum": ["first", "second", "third"],
+          "enum": [
+            "first",
+            "second",
+            "third"
+          ],
           "description": "Required grammatical person"
         },
         "rfc2119": {
-          "enum": ["required", "optional", "forbidden"],
+          "enum": [
+            "required",
+            "optional",
+            "forbidden"
+          ],
           "description": "Usage of RFC 2119 keywords"
         },
         "vale": {
@@ -378,27 +472,33 @@
           "properties": {
             "extends": {
               "type": "array",
-              "items": { "type": "string" },
+              "items": {
+                "type": "string"
+              },
               "description": "Vale style packages to apply"
             }
           }
         }
       }
     },
-
     "referenceRules": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "frontmatter": {
           "type": "object",
-          "additionalProperties": { "$ref": "#/$defs/refFieldRule" }
+          "additionalProperties": {
+            "$ref": "#/$defs/refFieldRule"
+          }
         },
         "internal_links": {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "must_resolve": { "type": "boolean", "default": true },
+            "must_resolve": {
+              "type": "boolean",
+              "default": true
+            },
             "check_anchors": {
               "type": "boolean",
               "default": false,
@@ -413,7 +513,6 @@
         }
       }
     },
-
     "refFieldRule": {
       "type": "object",
       "additionalProperties": false,
@@ -425,24 +524,30 @@
         },
         "allowed_extensions": {
           "type": "array",
-          "items": { "type": "string", "pattern": "^\\." },
+          "items": {
+            "type": "string",
+            "pattern": "^\\."
+          },
           "description": "Allowed file extensions for targets"
         },
         "allowed_prefixes": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "Allowed path prefixes for targets"
         }
       }
     },
-
     "reviewRules": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "criteria": {
           "type": "array",
-          "items": { "$ref": "#/$defs/reviewCriterion" },
+          "items": {
+            "$ref": "#/$defs/reviewCriterion"
+          },
           "description": "Structured rules for AI reviewer. Each criterion is evaluated as pass/fail."
         },
         "guidance": {
@@ -451,10 +556,13 @@
         }
       }
     },
-
     "reviewCriterion": {
       "type": "object",
-      "required": ["id", "rule", "severity"],
+      "required": [
+        "id",
+        "rule",
+        "severity"
+      ],
       "additionalProperties": false,
       "properties": {
         "id": {
@@ -471,33 +579,43 @@
           "description": "Clarifying details that help the reviewer correctly apply the rule — edge cases, exceptions, scope boundaries"
         },
         "severity": {
-          "enum": ["error", "warning", "info"],
+          "enum": [
+            "error",
+            "warning",
+            "info"
+          ],
           "description": "error = must fix before acceptance, warning = recommendation, info = optional suggestion"
         },
-        "examples": { "$ref": "#/$defs/reviewExamples" }
+        "examples": {
+          "$ref": "#/$defs/reviewExamples"
+        }
       }
     },
-
     "reviewExamples": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "pass": {
           "type": "array",
-          "items": { "$ref": "#/$defs/reviewExample" },
+          "items": {
+            "$ref": "#/$defs/reviewExample"
+          },
           "description": "Examples of text that satisfies the criterion"
         },
         "fail": {
           "type": "array",
-          "items": { "$ref": "#/$defs/reviewExample" },
+          "items": {
+            "$ref": "#/$defs/reviewExample"
+          },
           "description": "Examples of text that violates the criterion"
         }
       }
     },
-
     "reviewExample": {
       "type": "object",
-      "required": ["text"],
+      "required": [
+        "text"
+      ],
       "additionalProperties": false,
       "properties": {
         "text": {
