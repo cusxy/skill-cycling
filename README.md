@@ -14,6 +14,16 @@
 
 Каждая фаза выполняется **отдельным агентом с изолированным контекстом**, а reviewer может вернуть работу на любую более раннюю фазу через `returnTo`. Архитектура и протоколы описаны в [`AGLOOM.md`](AGLOOM.md) и [`docs/cycling/`](docs/cycling/).
 
+## Быстрый старт
+
+Попробовать skill-cycling можно без установки Agloom — достаточно `npx` и конфига через stdin:
+
+```bash
+echo 'plugins: [git@github.com:cusxy/skill-cycling]' | npx agloom transpile --adapter claude --config -
+```
+
+Agloom склонирует плагин, транспилирует инструкции и запишет результат в текущую директорию. После этого skill'ы (`/spec-cycle`, `/research-cycle`, `/cycle-creator`) станут доступны в Claude Code.
+
 ## Установка
 
 Плагин подключается через `.agloom/config.yml` в consumer-проекте:
